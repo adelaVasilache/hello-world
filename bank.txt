@@ -1,0 +1,107 @@
+public Class Customer{
+private String customer_name, customer_phone, customer_email;
+Customer(string c_name, string c_phone, string c_email)
+{
+Customer_name=c_name;
+Customer_phone = c_phone;
+Customer_email=c_email;
+}
+String GetName(){
+return name;
+}
+void changeName(str name_new){
+customer_name = name_new;
+}
+String GetPhone(){
+return phone;
+}
+void ChangePhone(string phone_new){
+customer_phone = phone_new;
+}
+string GetEmail(){
+return email;
+}
+void ChangeEmail(email_new){
+customer_email = email_new;
+}
+}
+
+//cod de test
+
+abstract Class Account(){
+private Customer person;
+private int balance;
+private int account_number;
+Account(Client client, int account_balance, int acc_number){
+person = client;
+balance = account_balance;
+account_number=acc_number;
+}
+abstract void deposit_funds(int amount);
+abstract void withdraw(int amount);
+public int get_balance(){
+return balance;}
+public int get_acc_number(){
+return account_number;}
+public Customer getClient(){
+return person;}
+
+Public Class SavingsAccount:Account
+{
+final int interest = 2;
+public SavingsAccount(Customer client, int savings_balance, int SavingsAc_number, {
+person = client;
+balance = savings_balance;
+account_number = SavingsAc_number;
+
+void AddCash(int sum)
+{
+balance=balance+sum;
+}
+void WithdrawCash(int sum)
+{
+if(balance>sum)
+{balance = balance-sum;
+}
+else Write("Insufficient funds");
+}
+int CalculateBalance()
+{
+balance = balance+interest/100*balance;
+return balance;
+}
+}
+
+Public Class FlexibleSavings : Account
+{
+final int interest = 3;
+public int years;
+public FlexibleSavings(Customer client, int flexible_balance, int flexible_number, int client_years){
+person = client;
+balance = flexible_balance;
+Account_number = flexible_number;
+years = client_years;
+}
+public CalculateBalance()
+{
+balance = balance +interest/100*balance + 0.001*years*balance;
+return balance;
+}
+}
+
+public Class Bank(){
+private Account add_account;
+private String bank_name, bank_phone, bank_email;
+Bank(string b_name, string b_phoneNumber, string b_email)
+{
+b_name = bank_name;
+b_phoneNumber = bank_phone;
+b_email = bank_email;
+}
+List<Account> accounts = new List<Account>;
+for(int i=0;i<accounts.size();i++)
+{
+accounts.Add(add_account);
+}
+}
+
